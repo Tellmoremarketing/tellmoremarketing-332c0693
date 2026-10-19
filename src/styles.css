@@ -19,10 +19,12 @@
  */
 
 @theme inline {
-  --font-display: "Outfit", sans-serif;
-  --font-sans: "Inter", sans-serif;
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
   --color-primary-hover: var(--primary-hover);
   --color-soft: var(--soft);
+  --color-pop: var(--pop);
+  --color-pop-foreground: var(--pop-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -77,6 +79,8 @@
   --primary-hover: oklch(0.43 0.15 276);
   --primary-foreground: oklch(0.99 0 0);
   --soft: oklch(0.954 0.018 276);
+  --pop: oklch(0.9 0.19 115);
+  --pop-foreground: oklch(0.18 0.03 285);
   --secondary: oklch(0.954 0.018 276);
   --secondary-foreground: oklch(0.18 0.03 285);
   --muted: oklch(0.954 0.018 276);
@@ -152,9 +156,15 @@
 
 html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 body { font-family: var(--font-sans); }
-h1,h2,h3,h4 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; }
+h1,h2,h3,h4 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.04em; }
 :focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; border-radius: 4px; }
 @utility shadow-card { box-shadow: var(--shadow-card); }
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+.marquee { animation: marquee 30s linear infinite; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.blob { animation: blob 14s ease-in-out infinite; filter: blur(2px); }
+.blob-b { animation-duration: 18s; animation-direction: reverse; }
+@keyframes blob { 0%,100% { border-radius: 50%; transform: translate(0,0) scale(1); } 50% { border-radius: 42% 58% 60% 40%; transform: translate(-20px,20px) scale(1.08); } }
+@media (prefers-reduced-motion: reduce) { .marquee, .blob { animation: none; } }

@@ -67,6 +67,7 @@ export const translations = {
       thanks: "Thanks! We'll send your audit within 48 hours.",
       reach: "Prefer email or DMs?",
     },
+    extra: { home: "Home", footerKicker: "Ready when you are", footerBig: "Let's fill your schedule.", marquee: ["Texas driving schools", "Reels that book", "English + Español", "Lead ads", "Monthly results"], heroTag: "Social media for Texas driving schools", explore: "Explore", servicesSub: "One team handles your whole social presence, from the first post to the monthly report.", howSub: "From a free audit to a full schedule, here's what working with us looks like.", workSub: "Concept work to show our approach.", teamSub: "Six marketing students. One mission: help Texas driving schools grow." },
     footer: { privacy: "Privacy policy", terms: "Terms", rights: "© 2026 Tell More Marketing" },
   },
   es: {
@@ -134,6 +135,7 @@ export const translations = {
       thanks: "¡Gracias! Te mandamos tu auditoría en menos de 48 horas.",
       reach: "¿Prefieres correo o mensaje directo?",
     },
+    extra: { home: "Inicio", footerKicker: "Cuando quieras", footerBig: "Llenemos tu agenda.", marquee: ["Autoescuelas en Texas", "Reels que traen alumnos", "English + Español", "Anuncios", "Resultados mensuales"], heroTag: "Redes sociales para autoescuelas en Texas", explore: "Explorar", servicesSub: "Un equipo se encarga de todas tus redes, desde el primer post hasta el reporte mensual.", howSub: "De una auditoría gratis a una agenda llena, así es trabajar con nosotros.", workSub: "Trabajo conceptual para mostrar cómo trabajamos.", teamSub: "Seis estudiantes de marketing. Una misión: ayudar a las autoescuelas de Texas a crecer." },
     footer: { privacy: "Política de privacidad", terms: "Términos", rights: "© 2026 Tell More Marketing" },
   },
 } as const;
