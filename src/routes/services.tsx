@@ -29,14 +29,14 @@ function Services() {
           {t.services.items.map((s, i) => {
             const I = icons[i]!;
             const span = i < 2 ? "md:col-span-3" : "md:col-span-2";
-            const tone = i === 0 ? "bg-primary text-primary-foreground" : i === 3 ? "bg-pop text-pop-foreground" : "bg-card";
+            const tone = i === 0 ? "bg-primary text-primary-foreground" : i === 3 ? "bg-soft" : "bg-card";
             return (
-              <Reveal key={s.t} className={`group rounded-[2rem] border-2 border-foreground p-8 transition-transform hover:-rotate-1 md:p-10 ${span} ${tone}`}>
+              <Reveal key={s.t} className={`group rounded-2xl p-8 shadow-card md:p-10 ${span} ${tone}`}>
                 <div className="flex items-start justify-between">
                   <I className="h-10 w-10" strokeWidth={1.6} aria-hidden />
                   <span className="font-display text-sm font-bold opacity-60">0{i + 1}</span>
                 </div>
-                <h2 className="mt-12 text-3xl leading-tight">{s.t}</h2>
+                <h2 className="mt-8 text-2xl leading-tight">{s.t}</h2>
                 <p className="mt-3 text-lg opacity-80">{s.d}</p>
               </Reveal>
             );
