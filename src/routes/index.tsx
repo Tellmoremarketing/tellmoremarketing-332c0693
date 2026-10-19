@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { Menu, X, Check, Clock, HelpCircle, BarChart3, CalendarDays, Camera, Target, Languages, FileBarChart, Mail, Instagram, ImageIcon } from "lucide-react";
+import logo from "@/assets/tell-more-logo.png.asset.json";
 import { translations, type Lang } from "@/lib/translations";
 
 export const Route = createFileRoute("/")({
@@ -21,9 +22,8 @@ const Arrow = () => <span aria-hidden="true" className="ml-1 inline-block">↗</
 
 function Logo() {
   return (
-    <a href="#top" className="flex items-center gap-1 font-display text-xl font-bold text-foreground">
-      Tell More<span className="text-primary">↗</span>
-      <span className="sr-only">Tell More Marketing home</span>
+    <a href="#top" className="flex items-center">
+      <img src={logo.url} alt="Tell More Marketing" className="h-9 w-auto" width={240} height={90} />
     </a>
   );
 }
@@ -138,7 +138,7 @@ function Index() {
           <Reveal className="mx-auto max-w-5xl">
             <ul className="grid gap-6 md:grid-cols-3">
               {t.problems.items.map((p, i) => {
-                const I = problemIcons[i];
+                const I = problemIcons[i]!;
                 return (
                   <li key={p} className="flex items-center gap-3 font-medium">
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-card text-primary"><I className="h-5 w-5" aria-hidden /></span>{p}
@@ -153,7 +153,7 @@ function Index() {
         <Section id="services" eyebrow={t.services.eyebrow} title={t.services.title}>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {t.services.items.map((s, i) => {
-              const I = serviceIcons[i];
+              const I = serviceIcons[i]!;
               return (
                 <Reveal key={s.t} className="rounded-xl bg-card p-6 shadow-card">
                   <I className="h-7 w-7 text-primary" strokeWidth={1.6} aria-hidden />
