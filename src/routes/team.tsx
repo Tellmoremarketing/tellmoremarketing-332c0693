@@ -17,7 +17,7 @@ export const Route = createFileRoute("/team")({
 });
 
 const team = ["Arya Balak", "Zack Morissette", "Lilou Petit", "Igne Spulyte", "Niko Hrenar", "Clémence Auboiroux"];
-const tones = ["bg-primary text-primary-foreground", "bg-pop text-pop-foreground", "bg-foreground text-background"];
+const tones = ["bg-primary text-primary-foreground", "bg-soft text-primary"];
 
 function Team() {
   const { t } = useLang();
@@ -27,8 +27,8 @@ function Team() {
       <section className="px-5 pb-10">
         <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {team.map((n, i) => (
-            <Reveal key={n} className={`group ${i % 3 === 1 ? "lg:mt-16" : ""}`}>
-              <div className={`flex aspect-square items-center justify-center rounded-[2rem] border-2 border-foreground font-display text-8xl font-bold transition-transform group-hover:rotate-2 ${tones[i % 3]}`} aria-hidden>
+            <Reveal key={n} className={`group`}>
+              <div className={`flex aspect-square items-center justify-center rounded-2xl font-display text-6xl font-bold ${tones[i % 3]}`} aria-hidden>
                 {n.split(" ").map((x) => x[0]).join("")}
               </div>
               <p className="mt-4 font-display text-2xl font-bold">{n}</p>

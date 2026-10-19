@@ -24,9 +24,9 @@ function How() {
       <section className="px-5 pb-10">
         <ol className="mx-auto max-w-7xl">
           {t.how.steps.map((s, i) => (
-            <Reveal as="li" key={s.t} className={`grid items-center gap-6 border-t-2 border-foreground py-12 md:grid-cols-[auto_1fr_1fr] md:gap-16 md:py-16 ${i % 2 ? "md:pl-24" : ""}`}>
-              <span className={`flex h-28 w-28 items-center justify-center rounded-full font-display text-6xl font-bold md:h-40 md:w-40 md:text-8xl ${i === 1 ? "bg-pop text-pop-foreground" : "bg-primary text-primary-foreground"} ${i === 2 ? "rotate-6" : "-rotate-6"}`}>{i + 1}</span>
-              <h2 className="text-4xl md:text-6xl">{s.t}</h2>
+            <Reveal as="li" key={s.t} className={`grid items-center gap-6 border-t border-border py-12 md:grid-cols-[auto_1fr_1fr] md:gap-16 md:py-16`}>
+              <span className={`flex h-20 w-20 items-center justify-center rounded-full font-display text-4xl font-bold md:h-24 md:w-24 md:text-5xl bg-primary text-primary-foreground`}>{i + 1}</span>
+              <h2 className="text-3xl md:text-4xl">{s.t}</h2>
               <p className="text-xl text-muted-foreground">{s.d}</p>
             </Reveal>
           ))}

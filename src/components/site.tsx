@@ -5,8 +5,8 @@ import logo from "@/assets/tell-more-logo.png.asset.json";
 import { useLang } from "@/lib/lang";
 
 export const Arrow = () => <span aria-hidden="true" className="ml-1 inline-block transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>;
-export const btn = "group inline-flex items-center justify-center rounded-full bg-primary px-6 py-3.5 font-semibold text-primary-foreground transition-all hover:bg-primary-hover hover:-rotate-1";
-export const btnPop = "group inline-flex items-center justify-center rounded-full bg-pop px-6 py-3.5 font-semibold text-pop-foreground transition-all hover:rotate-1 hover:scale-105";
+export const btn = "group inline-flex items-center justify-center rounded-full bg-primary px-6 py-3.5 font-semibold text-primary-foreground transition-all hover:bg-primary-hover ";
+export const btnPop = "group inline-flex items-center justify-center rounded-full bg-pop px-6 py-3.5 font-semibold text-pop-foreground transition-all hover:brightness-95";
 
 export function Reveal({ children, className = "", as: As = "div" }: { children: ReactNode; className?: string; as?: "div" | "li" }) {
   return <As className={`reveal ${className}`}>{children}</As>;
@@ -23,7 +23,7 @@ export const navLinks = [
 function Toggle() {
   const { lang, setLang } = useLang();
   return (
-    <div className="flex items-center rounded-full border-2 border-foreground p-0.5 text-sm font-bold" role="group" aria-label="Language">
+    <div className="flex items-center rounded-full border border-border p-0.5 text-sm font-bold" role="group" aria-label="Language">
       {(["en", "es"] as const).map((l) => (
         <button key={l} onClick={() => setLang(l)} aria-pressed={lang === l}
           className={`rounded-full px-3 py-1 ${lang === l ? "bg-foreground text-background" : "text-foreground"}`}>
@@ -94,7 +94,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <footer className="bg-foreground px-5 pb-10 pt-20 text-background">
         <div className="mx-auto max-w-7xl">
           <p className="font-display text-sm font-bold uppercase tracking-widest text-pop">{t.extra.footerKicker}</p>
-          <Link to="/contact" className="group mt-4 block font-display text-5xl font-bold leading-none tracking-tight transition-colors hover:text-pop md:text-8xl">
+          <Link to="/contact" className="group mt-4 block font-display text-4xl font-bold leading-tight transition-colors hover:text-pop md:text-6xl">
             {t.extra.footerBig}<Arrow />
           </Link>
           <div className="mt-16 grid gap-10 border-t border-background/20 pt-10 md:grid-cols-3">
@@ -116,12 +116,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
 export function PageHero({ eyebrow, title, sub }: { eyebrow: string; title: string; sub?: string }) {
   return (
-    <section className="relative px-5 pb-16 pt-20 md:pb-24 md:pt-32">
-      <div aria-hidden className="blob absolute -right-24 top-10 h-72 w-72 rounded-full bg-pop/70 md:h-96 md:w-96" />
+    <section className="relative px-5 pb-12 pt-16 md:pb-16 md:pt-24">
       <div className="relative mx-auto max-w-7xl">
         <Reveal>
-          <p className="inline-block -rotate-2 rounded-full bg-primary px-4 py-1 text-sm font-bold uppercase tracking-widest text-primary-foreground">{eyebrow}</p>
-          <h1 className="mt-6 max-w-5xl text-5xl leading-[0.95] md:text-8xl">{title}</h1>
+          <p className="text-sm font-bold uppercase tracking-widest text-primary">{eyebrow}</p>
+          <h1 className="mt-3 max-w-4xl text-4xl leading-tight md:text-6xl">{title}</h1>
           {sub && <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">{sub}</p>}
         </Reveal>
       </div>
@@ -144,9 +143,8 @@ export function CtaBand() {
   const { t } = useLang();
   return (
     <section className="px-5 py-20">
-      <Reveal className="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-primary px-8 py-16 text-primary-foreground md:px-16 md:py-24">
-        <div aria-hidden className="blob absolute -bottom-20 -right-10 h-64 w-64 rounded-full bg-pop/80" />
-        <h2 className="relative max-w-3xl text-4xl leading-none md:text-7xl">{t.contact.title}</h2>
+      <Reveal className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-primary px-8 py-16 text-primary-foreground md:px-16 md:py-24">
+        <h2 className="relative max-w-3xl text-3xl leading-tight md:text-5xl">{t.contact.title}</h2>
         <p className="relative mt-6 max-w-xl text-lg opacity-90">{t.contact.sub}</p>
         <Link to="/contact" className={`${btnPop} relative mt-10`}>{t.nav.cta}<Arrow /></Link>
       </Reveal>
@@ -182,7 +180,7 @@ export function ContactForm() {
 
   const input = "mt-1 w-full border-0 border-b-2 border-foreground/20 bg-transparent px-0 py-3 text-lg outline-none transition-colors focus:border-primary";
   return (
-    <form onSubmit={submit} noValidate className="grid gap-6 rounded-[2rem] border-2 border-foreground bg-card p-6 sm:grid-cols-2 md:p-10">
+    <form onSubmit={submit} noValidate className="grid gap-6 rounded-2xl bg-card p-6 shadow-card sm:grid-cols-2 md:p-10">
       {fields.map(({ k, type, area }) => (
         <div key={k} className={area || k === "social" ? "sm:col-span-2" : ""}>
           <label htmlFor={k} className="text-sm font-bold uppercase tracking-wider">{t[k]}</label>
