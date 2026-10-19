@@ -198,7 +198,3 @@ export function ContactForm() {
     </form>
   );
 }
-
-export function contactInfo() {
-  return null;
-}
