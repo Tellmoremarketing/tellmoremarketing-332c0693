@@ -1,7 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { Menu, X, Check, Mail, Instagram } from "lucide-react";
-import logo from "@/assets/tell-more-logo.png.asset.json";
 import { useLang } from "@/lib/lang";
 
 export const Arrow = () => <span aria-hidden="true" className="ml-1 inline-block transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>;
@@ -38,7 +37,7 @@ function Toggle() {
 function Logo() {
   return (
     <Link to="/" className="flex items-center">
-      <img src={logo.url} alt="Tell More Marketing" className="h-9 w-auto" width={240} height={90} />
+      <img src="/tell-more-logo.png" alt="Tell More Marketing" className="h-9 w-auto" width={233} height={90} />
     </Link>
   );
 }
