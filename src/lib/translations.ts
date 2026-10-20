@@ -3,7 +3,7 @@ export type Lang = "en" | "es";
 
 export const translations = {
   en: {
-    nav: { services: "Services", how: "How it works", work: "Work", team: "Team", contact: "Contact", cta: "Free audit", menu: "Open menu", close: "Close menu" },
+    nav: { services: "Services", how: "How it works", work: "Work", team: "Team", insights: "Insights", contact: "Contact", cta: "Free audit", menu: "Open menu", close: "Close menu" },
     hero: {
       title: "You teach driving. We fill your schedule.",
       sub: "Tell More Marketing runs social media for Texas driving schools, so more students find you, trust you and book.",
@@ -71,7 +71,7 @@ export const translations = {
     footer: { privacy: "Privacy policy", terms: "Terms", rights: "© 2026 Tell More Marketing" },
   },
   es: {
-    nav: { services: "Servicios", how: "Cómo funciona", work: "Proyectos", team: "Equipo", contact: "Contacto", cta: "Auditoría gratis", menu: "Abrir menú", close: "Cerrar menú" },
+    nav: { services: "Servicios", how: "Cómo funciona", work: "Proyectos", team: "Equipo", insights: "Ideas", contact: "Contacto", cta: "Auditoría gratis", menu: "Abrir menú", close: "Cerrar menú" },
     hero: {
       title: "Tú enseñas a manejar. Nosotros llenamos tu agenda.",
       sub: "Tell More Marketing maneja las redes sociales de autoescuelas en Texas, para que más alumnos te encuentren, confíen en ti y reserven.",
