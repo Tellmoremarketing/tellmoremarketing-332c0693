@@ -7,9 +7,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Tell More Marketing — Social media for Texas driving schools" },
-      { name: "description", content: "We run social media for Texas driving schools so more students find you, trust you and book. Free audit." },
+      { name: "description", content: "Social media marketing for independent driving schools in Texas. Attract potential students through Instagram and Facebook content and advertising. Get your free social media review." },
       { property: "og:title", content: "Tell More Marketing — Social media for Texas driving schools" },
-      { property: "og:description", content: "You teach driving. We fill your schedule. Bilingual content, lead ads and clear monthly results." },
+      { property: "og:description", content: "Social media marketing for independent driving schools in Texas. Spend more time teaching. Let us handle your social media." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -26,11 +26,10 @@ function Index() {
       <section className="relative px-5 pb-20 pt-16 md:pb-28 md:pt-24">
         <Reveal className="relative mx-auto max-w-7xl">
           <p className="inline-block rounded-full bg-soft text-primary px-4 py-1 text-sm font-bold uppercase tracking-widest">{t.extra.heroTag}</p>
-          <h1 className="mt-8 text-5xl leading-[1.02] md:text-7xl">
-            {t.hero.title.split(". ").map((part, i, a) => (
-              <span key={i} className={`block ${i === 1 ? "text-primary" : ""}`}>{part}{i < a.length - 1 ? "." : ""}</span>
-            ))}
+          <h1 className="mt-6 max-w-5xl text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">
+            {t.hero.title}
           </h1>
+          <p className="mt-6 max-w-3xl font-display text-2xl font-semibold leading-tight text-primary md:text-3xl">{t.hero.tagline}</p>
           <div className="mt-10 grid gap-8 md:grid-cols-[1.2fr_1fr] md:items-end">
             <p className="max-w-xl text-lg text-muted-foreground md:text-xl">{t.hero.sub}</p>
             <div className="flex flex-wrap items-center gap-5 md:justify-end">

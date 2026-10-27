@@ -5,8 +5,9 @@ export const translations = {
   en: {
     nav: { services: "Services", how: "How it works", work: "Work", team: "Team", insights: "Insights", contact: "Contact", cta: "Free social media review", menu: "Open menu", close: "Close menu" },
     hero: {
-      title: "You teach driving. We fill your schedule.",
-      sub: "Tell More Marketing runs social media for Texas driving schools, so more students find you, trust you and book.",
+      title: "Social Media Marketing for Independent Driving Schools in Texas",
+      tagline: "Spend more time teaching. Let us handle your social media.",
+      sub: "We help your driving school attract potential students and turn online interest into lesson enquiries through Instagram and Facebook content and advertising.",
       cta: "Get your free social media review",
       secondary: "See how it works",
       points: ["Only driving schools in Texas", "English & Spanish content", "Clear monthly results"],
@@ -73,8 +74,9 @@ export const translations = {
   es: {
     nav: { services: "Servicios", how: "Cómo funciona", work: "Proyectos", team: "Equipo", insights: "Ideas", contact: "Contacto", cta: "Revisión gratis", menu: "Abrir menú", close: "Cerrar menú" },
     hero: {
-      title: "Tú enseñas a manejar. Nosotros llenamos tu agenda.",
-      sub: "Tell More Marketing maneja las redes sociales de autoescuelas en Texas, para que más alumnos te encuentren, confíen en ti y reserven.",
+      title: "Marketing en redes sociales para autoescuelas independientes en Texas",
+      tagline: "Dedica más tiempo a enseñar. Nosotros nos encargamos de tus redes sociales.",
+      sub: "Ayudamos a tu autoescuela a atraer posibles alumnos y convertir el interés en internet en consultas sobre clases mediante contenido y publicidad en Instagram y Facebook.",
       cta: "Pide tu revisión de redes gratis",
       secondary: "Mira cómo funciona",
       points: ["Solo autoescuelas en Texas", "Contenido en inglés y español", "Resultados claros cada mes"],
