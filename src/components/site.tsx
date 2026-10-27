@@ -14,7 +14,6 @@ export function Reveal({ children, className = "", as: As = "div" }: { children:
 export const navLinks = [
   { to: "/services", k: "services" },
   { to: "/how-it-works", k: "how" },
-  { to: "/work", k: "work" },
   { to: "/team", k: "team" },
   { to: "/contact", k: "contact" },
 ] as const;

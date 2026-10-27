@@ -3,7 +3,7 @@ export type Lang = "en" | "es";
 
 export const translations = {
   en: {
-    nav: { services: "Services", how: "How it works", work: "Work", team: "Team", contact: "Contact", cta: "Free social media review", menu: "Open menu", close: "Close menu" },
+    nav: { services: "Services", how: "How it works", team: "Team", contact: "Contact", cta: "Free social media review", menu: "Open menu", close: "Close menu" },
     hero: {
       title: "Social Media Marketing for Driving Schools in Texas",
       tagline: "Spend more time teaching. Let us handle your social media.",
@@ -36,19 +36,6 @@ export const translations = {
         { t: "More bookings", d: "We post, run ads and report results every month." },
       ],
     },
-    work: {
-      eyebrow: "Work",
-      title: "Sample projects",
-      note: "Concept work to show our approach",
-      problem: "Problem",
-      idea: "Idea",
-      items: [
-        { t: "Teen driving school, Austin", p: "Posts only on holidays", i: "Weekly Reels of first-lesson moments + parent tips" },
-        { t: "Adult lessons school, Houston", p: "No clear way to book online", i: "Lead ads + Book Now button on every post" },
-        { t: "Bilingual school, San Antonio", p: "Missing Spanish-speaking families", i: "English & Spanish content series" },
-      ],
-      img: "Image coming soon",
-    },
     team: {
       eyebrow: "Team",
       title: "Who we are",
@@ -68,11 +55,11 @@ export const translations = {
       thanks: "Thanks! We'll send your review within 48 hours.",
       reach: "Prefer email or DMs?",
     },
-    extra: { home: "Home", footerKicker: "Ready when you are", footerBig: "Let's fill your schedule.", marquee: ["Texas driving schools", "Reels that book", "English + Español", "Lead ads", "Monthly results"], explore: "Explore", servicesSub: "One team handles your whole social presence, from the first post to the monthly report.", howSub: "From a free social media review to a full schedule, here's what working with us looks like.", workSub: "Concept work to show our approach.", teamSub: "Six marketing students. One mission: help Texas driving schools grow." },
+    extra: { home: "Home", footerKicker: "Ready when you are", footerBig: "Let's fill your schedule.", marquee: ["Texas driving schools", "Reels that book", "English + Español", "Lead ads", "Monthly results"], explore: "Explore", servicesSub: "One team handles your whole social presence, from the first post to the monthly report.", howSub: "From a free social media review to a full schedule, here's what working with us looks like.", teamSub: "Six marketing students. One mission: help Texas driving schools grow." },
     footer: { privacy: "Privacy policy", terms: "Terms", rights: "© 2026 Tell More Marketing" },
   },
   es: {
-    nav: { services: "Servicios", how: "Cómo funciona", work: "Proyectos", team: "Equipo", contact: "Contacto", cta: "Revisión gratis", menu: "Abrir menú", close: "Cerrar menú" },
+    nav: { services: "Servicios", how: "Cómo funciona", team: "Equipo", contact: "Contacto", cta: "Revisión gratis", menu: "Abrir menú", close: "Cerrar menú" },
     hero: {
       title: "Marketing en redes sociales para autoescuelas en Texas",
       tagline: "Dedica más tiempo a enseñar. Nosotros nos encargamos de tus redes sociales.",
@@ -105,19 +92,6 @@ export const translations = {
         { t: "Más reservas", d: "Publicamos, corremos anuncios y te reportamos resultados cada mes." },
       ],
     },
-    work: {
-      eyebrow: "Proyectos",
-      title: "Proyectos de ejemplo",
-      note: "Trabajo conceptual para mostrar cómo trabajamos",
-      problem: "Problema",
-      idea: "Idea",
-      items: [
-        { t: "Escuela para adolescentes, Austin", p: "Solo publica en días festivos", i: "Reels semanales de primeras clases + consejos para papás" },
-        { t: "Escuela para adultos, Houston", p: "No hay una forma clara de reservar en línea", i: "Anuncios + botón de Reservar en cada post" },
-        { t: "Escuela bilingüe, San Antonio", p: "No llega a familias hispanohablantes", i: "Serie de contenido en inglés y español" },
-      ],
-      img: "Imagen próximamente",
-    },
     team: {
       eyebrow: "Equipo",
       title: "Quiénes somos",
@@ -137,7 +111,7 @@ export const translations = {
       thanks: "¡Gracias! Te mandamos tu revisión en menos de 48 horas.",
       reach: "¿Prefieres correo o mensaje directo?",
     },
-    extra: { home: "Inicio", footerKicker: "Cuando quieras", footerBig: "Llenemos tu agenda.", marquee: ["Autoescuelas en Texas", "Reels que traen alumnos", "English + Español", "Anuncios", "Resultados mensuales"], explore: "Explorar", servicesSub: "Un equipo se encarga de todas tus redes, desde el primer post hasta el reporte mensual.", howSub: "De una revisión gratis a una agenda llena, así es trabajar con nosotros.", workSub: "Trabajo conceptual para mostrar cómo trabajamos.", teamSub: "Seis estudiantes de marketing. Una misión: ayudar a las autoescuelas de Texas a crecer." },
+    extra: { home: "Inicio", footerKicker: "Cuando quieras", footerBig: "Llenemos tu agenda.", marquee: ["Autoescuelas en Texas", "Reels que traen alumnos", "English + Español", "Anuncios", "Resultados mensuales"], explore: "Explorar", servicesSub: "Un equipo se encarga de todas tus redes, desde el primer post hasta el reporte mensual.", howSub: "De una revisión gratis a una agenda llena, así es trabajar con nosotros.", teamSub: "Seis estudiantes de marketing. Una misión: ayudar a las autoescuelas de Texas a crecer." },
     footer: { privacy: "Política de privacidad", terms: "Términos", rights: "© 2026 Tell More Marketing" },
   },
 } as const;
