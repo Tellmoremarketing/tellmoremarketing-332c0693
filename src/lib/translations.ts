@@ -38,7 +38,7 @@ export const translations = {
     },
     team: {
       eyebrow: "Team",
-      title: "Who we are",
+      title: "Meet the team",
       intro: "We're six marketing students at TBS Education in Barcelona, building Tell More Marketing for driving schools in Texas.",
       roles: ["Strategy Lead", "Paid Ads", "Content Creator", "Social Media Manager", "Brand & Copy", "Research & Analytics"],
     },
@@ -94,7 +94,7 @@ export const translations = {
     },
     team: {
       eyebrow: "Equipo",
-      title: "Quiénes somos",
+      title: "Conoce al equipo",
       intro: "Somos seis estudiantes de marketing en TBS Education en Barcelona, creando Tell More Marketing para autoescuelas en Texas.",
       roles: ["Líder de estrategia", "Anuncios pagados", "Creadora de contenido", "Social Media Manager", "Marca y textos", "Investigación y análisis"],
     },
