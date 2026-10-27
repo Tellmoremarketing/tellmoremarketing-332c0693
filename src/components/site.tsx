@@ -115,7 +115,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               <li><a href="mailto:tellmoremarketing@gmail.com" className="flex items-center gap-2 hover:text-pop"><Mail className="h-4 w-4" aria-hidden />tellmoremarketing@gmail.com</a></li>
               <li><a href="https://instagram.com/tellmoremarketing" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-pop"><Instagram className="h-4 w-4" aria-hidden />@tellmoremarketing</a></li>
             </ul>
-            <p className="text-background/60 md:text-right">{t.footer.rights}<br />tellmoremarketing.com</p>
+            <p className="text-background/60 md:text-right">{t.footer.rights}<br />tellmoremarketing.com<br /><span className="mt-3 inline-block">Made with love in Barcelona</span></p>
           </div>
         </div>
       </footer>
