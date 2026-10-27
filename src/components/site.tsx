@@ -165,14 +165,47 @@ export function ContactForm() {
   const [v, setV] = useState<Record<Field, string>>({ school: "", email: "", message: "" });
   const [err, setErr] = useState<Partial<Record<Field, string>>>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
-  const submit = (e: FormEvent) => {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (sending) return;
+    const form = e.currentTarget;
     const n: Partial<Record<Field, string>> = {};
     fields.forEach(({ k, req }) => { if (req && !v[k].trim()) n[k] = t.required; });
     if (v.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) n.email = t.badEmail;
     setErr(n);
-    if (Object.keys(n).length === 0) setSent(true);
+    if (Object.keys(n).length > 0) return;
+    setSubmitError(false);
+    setSending(true);
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 20000);
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/tellmoremarketing@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        signal: controller.signal,
+        body: JSON.stringify({
+          school: v.school.trim(),
+          email: v.email.trim(),
+          message: v.message.trim(),
+          _subject: "Tell More Marketing — new website enquiry",
+          _template: "table",
+          _honey: new FormData(form).get("_honey") ?? "",
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || (result.success !== true && result.success !== "true")) {
+        throw new Error("Form submission was not accepted");
+      }
+      setSent(true);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      window.clearTimeout(timeout);
+      setSending(false);
+    }
   };
 
   if (sent) {
@@ -181,19 +214,21 @@ export function ContactForm() {
 
   const input = "mt-1 w-full border-0 border-b-2 border-foreground/20 bg-transparent px-0 py-3 text-lg outline-none transition-colors focus:border-primary";
   return (
-    <form onSubmit={submit} noValidate className="grid gap-6 rounded-2xl bg-card p-6 shadow-card sm:grid-cols-2 md:p-10">
+    <form onSubmit={submit} noValidate aria-busy={sending} className="grid gap-6 rounded-2xl bg-card p-6 shadow-card sm:grid-cols-2 md:p-10">
+      <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       {fields.map(({ k, type, area }) => (
         <div key={k} className={area ? "sm:col-span-2" : ""}>
           <label htmlFor={k} className="text-sm font-bold uppercase tracking-wider">{t[k]}</label>
           {area ? (
-            <textarea id={k} rows={4} value={v[k]} onChange={(e) => setV({ ...v, [k]: e.target.value })} aria-invalid={!!err[k]} aria-describedby={err[k] ? `${k}-err` : undefined} className={input} />
+            <textarea id={k} name={k} rows={4} value={v[k]} onChange={(e) => setV({ ...v, [k]: e.target.value })} aria-invalid={!!err[k]} aria-describedby={err[k] ? `${k}-err` : undefined} className={input} />
           ) : (
-            <input id={k} type={type ?? "text"} value={v[k]} onChange={(e) => setV({ ...v, [k]: e.target.value })} aria-invalid={!!err[k]} aria-describedby={err[k] ? `${k}-err` : undefined} className={input} />
+            <input id={k} name={k} type={type ?? "text"} value={v[k]} onChange={(e) => setV({ ...v, [k]: e.target.value })} aria-invalid={!!err[k]} aria-describedby={err[k] ? `${k}-err` : undefined} className={input} />
           )}
           {err[k] && <p id={`${k}-err`} className="mt-1 text-sm text-destructive">{err[k]}</p>}
         </div>
       ))}
-      <div className="sm:col-span-2"><button type="submit" className={btn}>{t.send}<Arrow /></button></div>
+      {submitError && <p role="alert" className="text-destructive sm:col-span-2">{t.sendError} <a className="underline" href="mailto:tellmoremarketing@gmail.com">tellmoremarketing@gmail.com</a></p>}
+      <div className="sm:col-span-2"><button type="submit" disabled={sending} className={`${btn} disabled:cursor-wait disabled:opacity-60`}>{sending ? t.sending : t.send}<Arrow /></button></div>
     </form>
   );
 }
