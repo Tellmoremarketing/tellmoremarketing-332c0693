@@ -1,7 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { Menu, X, Check, Mail, Instagram } from "lucide-react";
-import logo from "@/assets/tell-more-logo.png.asset.json";
 import { useLang } from "@/lib/lang";
 
 export const Arrow = () => <span aria-hidden="true" className="ml-1 inline-block transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>;
@@ -36,17 +35,12 @@ function Toggle() {
 }
 
 function Logo() {
-  const [imageFailed, setImageFailed] = useState(false);
   return (
-    <Link to="/" className="flex shrink-0 items-center" aria-label="Tell More Marketing home">
-      {imageFailed ? (
-        <span className="flex items-center gap-2 font-display font-bold leading-tight text-primary">
-          <img src="/favicon.png" alt="" width={36} height={36} className="h-9 w-9" />
-          <span>Tell More<span className="block text-xs tracking-widest">MARKETING</span></span>
-        </span>
-      ) : (
-        <img src={logo.url} alt="Tell More Marketing" className="h-9 w-auto" width={240} height={90} onError={() => setImageFailed(true)} />
-      )}
+    <Link to="/" className="relative block w-36 shrink-0 overflow-hidden sm:w-40" style={{ aspectRatio: "770 / 300" }} aria-label="Tell More Marketing home">
+      <img src="/brand/tell-more-logo.jpg" alt="Tell More Marketing" width={1034} height={792}
+        className="absolute h-auto max-w-none"
+        style={{ width: "134.3%", left: "-10.4%", top: "-86.7%" }}
+        fetchPriority="high" />
     </Link>
   );
 }
