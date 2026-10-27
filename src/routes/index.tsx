@@ -31,7 +31,7 @@ function Index() {
           <p className="mt-6 max-w-3xl font-display text-2xl font-semibold leading-tight text-primary md:text-3xl">{t.hero.tagline}</p>
           <div className="mt-10 grid gap-8 md:grid-cols-[1.2fr_1fr] md:items-end">
             <p className="max-w-xl text-lg text-muted-foreground md:text-xl">{t.hero.sub}</p>
-            <div className="flex flex-wrap items-center gap-5 md:justify-end">
+            <div className="flex flex-col items-start gap-4 md:items-center">
               <Link to="/contact" className={btn}>{t.hero.cta}<Arrow /></Link>
               <Link to="/how-it-works" className="group font-bold underline decoration-pop decoration-2 underline-offset-4">{t.hero.secondary}<Arrow /></Link>
             </div>
