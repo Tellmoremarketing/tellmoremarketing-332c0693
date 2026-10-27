@@ -180,9 +180,9 @@ export function ContactForm() {
     setSubmitError(false);
     setSending(true);
     const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 20000);
+    const timeout = window.setTimeout(() => controller.abort(), 30000);
     try {
-      const response = await fetch("https://formsubmit.co/ajax/tellmoremarketing@gmail.com", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         signal: controller.signal,
@@ -190,8 +190,6 @@ export function ContactForm() {
           school: v.school.trim(),
           email: v.email.trim(),
           message: v.message.trim(),
-          _subject: "Tell More Marketing — new website enquiry",
-          _template: "table",
           _honey: new FormData(form).get("_honey") ?? "",
         }),
       });

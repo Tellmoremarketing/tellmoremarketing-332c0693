@@ -1,4 +1,5 @@
 import "./lib/error-capture";
+import { handleContact } from "./lib/contact.server";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
@@ -47,6 +48,14 @@ function isH3SwallowedErrorBody(body: string): boolean {
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      if (new URL(request.url).pathname === "/api/contact") {
+        return await handleContact(request, {
+          SUPABASE_URL: process.env.SUPABASE_URL,
+          SUPABASE_SECRET_KEY: process.env.SUPABASE_SECRET_KEY,
+          RESEND_API_KEY: process.env.RESEND_API_KEY,
+          CONTACT_FROM_EMAIL: process.env.CONTACT_FROM_EMAIL,
+        });
+      }
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);
