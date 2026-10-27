@@ -9,7 +9,7 @@ export const btn = "group inline-flex items-center justify-center rounded-full b
 export const btnPop = "group inline-flex items-center justify-center rounded-full bg-pop px-6 py-3.5 font-semibold text-pop-foreground transition-all hover:brightness-95";
 
 export function Reveal({ children, className = "", as: As = "div" }: { children: ReactNode; className?: string; as?: "div" | "li" }) {
-  return <As className={`reveal ${className}`}>{children}</As>;
+  return <As className={`reveal in ${className}`}>{children}</As>;
 }
 
 export const navLinks = [
@@ -36,9 +36,17 @@ function Toggle() {
 }
 
 function Logo() {
+  const [imageFailed, setImageFailed] = useState(false);
   return (
-    <Link to="/" className="flex items-center">
-      <img src={logo.url} alt="Tell More Marketing" className="h-9 w-auto" width={240} height={90} />
+    <Link to="/" className="flex shrink-0 items-center" aria-label="Tell More Marketing home">
+      {imageFailed ? (
+        <span className="flex items-center gap-2 font-display font-bold leading-tight text-primary">
+          <img src="/favicon.png" alt="" width={36} height={36} className="h-9 w-9" />
+          <span>Tell More<span className="block text-xs tracking-widest">MARKETING</span></span>
+        </span>
+      ) : (
+        <img src={logo.url} alt="Tell More Marketing" className="h-9 w-auto" width={240} height={90} onError={() => setImageFailed(true)} />
+      )}
     </Link>
   );
 }
@@ -104,7 +112,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               {navLinks.map((l) => <li key={l.to}><Link to={l.to} className="hover:text-pop">{t.nav[l.k]}</Link></li>)}
             </ul>
             <ul className="space-y-2">
-              <li><a href="mailto:hello@tellmoremarketing.com" className="flex items-center gap-2 hover:text-pop"><Mail className="h-4 w-4" aria-hidden />hello@tellmoremarketing.com</a></li>
+              <li><a href="mailto:tellmoremarketing@gmail.com" className="flex items-center gap-2 hover:text-pop"><Mail className="h-4 w-4" aria-hidden />tellmoremarketing@gmail.com</a></li>
               <li><a href="https://instagram.com/tellmoremarketing" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-pop"><Instagram className="h-4 w-4" aria-hidden />@tellmoremarketing</a></li>
             </ul>
             <p className="text-background/60 md:text-right">{t.footer.rights}<br />tellmoremarketing.com</p>
@@ -153,15 +161,16 @@ export function CtaBand() {
   );
 }
 
-type Field = "name" | "school" | "city" | "email" | "phone" | "social" | "message";
+type Field = "school" | "email" | "message";
 const fields: { k: Field; req: boolean; type?: string; area?: boolean }[] = [
-  { k: "name", req: true }, { k: "school", req: true }, { k: "city", req: true }, { k: "email", req: true, type: "email" },
-  { k: "phone", req: false, type: "tel" }, { k: "social", req: false, type: "url" }, { k: "message", req: true, area: true },
+  { k: "school", req: true },
+  { k: "email", req: true, type: "email" },
+  { k: "message", req: false, area: true },
 ];
 
 export function ContactForm() {
   const t = useLang().t.contact;
-  const [v, setV] = useState<Record<Field, string>>({ name: "", school: "", city: "", email: "", phone: "", social: "", message: "" });
+  const [v, setV] = useState<Record<Field, string>>({ school: "", email: "", message: "" });
   const [err, setErr] = useState<Partial<Record<Field, string>>>({});
   const [sent, setSent] = useState(false);
 
@@ -170,7 +179,6 @@ export function ContactForm() {
     const n: Partial<Record<Field, string>> = {};
     fields.forEach(({ k, req }) => { if (req && !v[k].trim()) n[k] = t.required; });
     if (v.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) n.email = t.badEmail;
-    if (v.social && !/^(https?:\/\/)?[\w.-]+\.[a-z]{2,}(\/\S*)?$/i.test(v.social.trim())) n.social = t.badUrl;
     setErr(n);
     if (Object.keys(n).length === 0) setSent(true);
   };
@@ -183,7 +191,7 @@ export function ContactForm() {
   return (
     <form onSubmit={submit} noValidate className="grid gap-6 rounded-2xl bg-card p-6 shadow-card sm:grid-cols-2 md:p-10">
       {fields.map(({ k, type, area }) => (
-        <div key={k} className={area || k === "social" ? "sm:col-span-2" : ""}>
+        <div key={k} className={area ? "sm:col-span-2" : ""}>
           <label htmlFor={k} className="text-sm font-bold uppercase tracking-wider">{t[k]}</label>
           {area ? (
             <textarea id={k} rows={4} value={v[k]} onChange={(e) => setV({ ...v, [k]: e.target.value })} aria-invalid={!!err[k]} aria-describedby={err[k] ? `${k}-err` : undefined} className={input} />

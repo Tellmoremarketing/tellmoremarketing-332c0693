@@ -17,7 +17,7 @@ const words = {
     eyebrow: "FREE GUIDE · TEXAS DRIVING SCHOOLS",
     title: "How to get more students for your Texas driving school",
     lead: "Empty lesson slots? More random posting isn't the answer. Create a clear path from online discovery to a real conversation—and, ultimately, more booked lessons.",
-    action: "Get your free social media audit",
+    action: "Get your free social media review",
     introTitle: "Your next student starts with a search.",
     intro: "Parents and new drivers research their options online. A clear Google presence, useful social content, and a simple way to get in touch can help your school stand out.",
     funnelTitle: "The conversion funnel",
@@ -25,12 +25,12 @@ const words = {
     steps: [
       ["Google or ChatGPT", "An owner searches for ways to get more driving school students."],
       ["This helpful article", "Our guide answers their question and introduces a practical approach."],
-      ["Free audit request", "The owner contacts us for specific recommendations."],
+      ["Free social media review request", "The owner contacts us for specific recommendations."],
       ["Discovery call", "We qualify the opportunity, discuss goals, and explore working together."],
     ],
     goalsTitle: "Our realistic conversion objectives",
     goalsNote: "Illustrative goals for a new campaign, not measured results or guarantees. Actual conversion rates must be tracked.",
-    goals: [["1–3%", "Article visits → audit requests"], ["20–30%", "Audit requests → qualified leads"], ["50%", "Qualified leads → discovery calls (initial target)"]],
+    goals: [["1–3%", "Article visits → review requests"], ["20–30%", "Review requests → qualified leads"], ["50%", "Qualified leads → discovery calls (initial target)"]],
     tipsTitle: "Three ways to bring in more driving school students",
     tips: [
       ["Show up in local searches", "Keep your Google Business Profile updated, mention your Texas city and services, and make it easy for families to call or book."],
@@ -40,13 +40,13 @@ const words = {
     searchTitle: "Five keywords to research",
     searchNote: "These are seed keyword ideas. Search volume and ranking difficulty have not yet been verified.",
     endTitle: "Ready to fill more lesson slots?",
-    endText: "We help independent Texas driving schools build a social presence that attracts the right audience. Start with a free audit.",
+    endText: "We help independent Texas driving schools build a social presence that attracts the right audience. Start with a free social media review.",
   },
   es: {
     eyebrow: "GUÍA GRATIS · AUTOESCUELAS DE TEXAS",
     title: "Cómo conseguir más alumnos para tu autoescuela en Texas",
     lead: "¿Tienes horarios vacíos? Publicar sin estrategia no basta. Crea un camino claro desde el primer descubrimiento en internet hasta una conversación y una reserva.",
-    action: "Solicita una auditoría gratis",
+    action: "Solicita una revisión gratis",
     introTitle: "Tu próximo alumno empieza con una búsqueda.",
     intro: "Los padres y nuevos conductores comparan opciones en internet. Una buena presencia en Google, contenido útil y una forma fácil de contactar ayudan a destacar.",
     funnelTitle: "El embudo de conversión",
@@ -54,7 +54,7 @@ const words = {
     steps: [
       ["Google o ChatGPT", "El dueño busca maneras de conseguir más alumnos."],
       ["Este artículo", "Nuestra guía responde sus preguntas y presenta una estrategia."],
-      ["Solicitud de auditoría", "El dueño nos contacta para recibir recomendaciones específicas."],
+      ["Solicitud de revisión", "El dueño nos contacta para recibir recomendaciones específicas."],
       ["Llamada inicial", "Evaluamos sus objetivos y una posible colaboración."],
     ],
     goalsTitle: "Objetivos realistas de conversión",
@@ -69,7 +69,7 @@ const words = {
     searchTitle: "Cinco palabras clave para investigar",
     searchNote: "Son ideas iniciales. No hemos verificado el volumen de búsqueda ni la dificultad de posicionamiento.",
     endTitle: "¿Quieres llenar más horarios?",
-    endText: "Ayudamos a autoescuelas independientes de Texas a atraer a su público ideal. Empieza con una auditoría gratis.",
+    endText: "Ayudamos a autoescuelas independientes de Texas a atraer a su público ideal. Empieza con una revisión gratis.",
   },
 } as const;
 
