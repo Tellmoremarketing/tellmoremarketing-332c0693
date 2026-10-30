@@ -74,6 +74,19 @@ function Index() {
         </div>
       </section>
 
+      <section className="px-5 py-20">
+        <Reveal className="mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-soft md:grid-cols-2">
+          <img src="/guide/driving-lesson.jpg" alt={g.alt} width={1600} height={900} loading="lazy"
+            className="aspect-[16/10] h-full w-full object-cover object-[35%_center] md:aspect-auto" />
+          <div className="flex flex-col justify-center p-8 md:p-12">
+            <p className="text-sm font-bold uppercase tracking-widest text-primary">{g.eyebrow}</p>
+            <h2 className="mt-4 text-3xl md:text-4xl">{g.title}</h2>
+            <p className="mt-4 text-lg text-muted-foreground">{g.text}</p>
+            <Link to="/get-more-driving-school-students" className={`${btn} mt-8 self-start`}>{g.cta}<Arrow /></Link>
+          </div>
+        </Reveal>
+      </section>
+
       <section className="px-5 pb-10 pt-20">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">{t.extra.explore}</p>
@@ -91,19 +104,6 @@ function Index() {
             ))}
           </ul>
         </div>
-      </section>
-
-      <section className="px-5 pb-20 pt-10">
-        <Reveal className="mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-soft md:grid-cols-2">
-          <img src="/guide/driving-lesson.jpg" alt={g.alt} width={1600} height={900} loading="lazy"
-            className="aspect-[16/10] h-full w-full object-cover md:aspect-auto" />
-          <div className="flex flex-col justify-center p-8 md:p-12">
-            <p className="text-sm font-bold uppercase tracking-widest text-primary">{g.eyebrow}</p>
-            <h2 className="mt-4 text-3xl md:text-4xl">{g.title}</h2>
-            <p className="mt-4 text-lg text-muted-foreground">{g.text}</p>
-            <Link to="/get-more-driving-school-students" className={`${btn} mt-8 self-start`}>{g.cta}<Arrow /></Link>
-          </div>
-        </Reveal>
       </section>
 
       <CtaBand />
