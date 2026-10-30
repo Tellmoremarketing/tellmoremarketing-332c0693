@@ -149,7 +149,7 @@ function Guide() {
         <div className="mx-auto max-w-7xl">
           <h2 className="max-w-4xl text-3xl md:text-5xl">{t.tipsTitle}</h2>
           <img src="/guide/driving-test.jpg" alt="A driving instructor with a clipboard explaining a driving test to a student" width={1400} height={932}
-            loading="lazy" className="mt-10 aspect-[16/9] w-full rounded-3xl object-cover shadow-card md:aspect-[3/1]" />
+            loading="lazy" className="mt-10 aspect-[16/9] w-full rounded-3xl object-cover object-top shadow-card md:aspect-[3/1]" />
           <div className="mt-5 grid gap-5 md:grid-cols-3">
             {t.tips.map(([title, detail], i) => <div key={title} className="rounded-2xl bg-card p-8 shadow-card">
               <span className="text-sm font-bold text-primary">0{i + 1}</span>
