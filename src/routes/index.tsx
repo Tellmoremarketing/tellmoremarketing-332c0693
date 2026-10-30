@@ -19,8 +19,26 @@ export const Route = createFileRoute("/")({
 
 const problemIcons = [Clock, HelpCircle, BarChart3];
 
+const guideTeaser = {
+  en: {
+    eyebrow: "Free guide",
+    title: "How to get more students for your Texas driving school",
+    text: "Our step-by-step guide: how families find driving schools online, and three practical ways to turn that attention into booked lessons.",
+    cta: "Read the guide",
+    alt: "A smiling driving instructor and student during a lesson",
+  },
+  es: {
+    eyebrow: "Guía gratis",
+    title: "Cómo conseguir más alumnos para tu autoescuela en Texas",
+    text: "Nuestra guía paso a paso: cómo las familias encuentran autoescuelas en internet y tres formas prácticas de convertir ese interés en reservas.",
+    cta: "Leer la guía",
+    alt: "Un instructor de manejo y su alumna sonriendo durante una clase",
+  },
+} as const;
+
 function Index() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const g = guideTeaser[lang];
   return (
     <>
       <section className="relative px-5 pb-20 pt-16 md:pb-28 md:pt-24">
@@ -73,6 +91,19 @@ function Index() {
             ))}
           </ul>
         </div>
+      </section>
+
+      <section className="px-5 pb-20 pt-10">
+        <Reveal className="mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-soft md:grid-cols-2">
+          <img src="/guide/driving-lesson.jpg" alt={g.alt} width={1600} height={900} loading="lazy"
+            className="aspect-[16/10] h-full w-full object-cover md:aspect-auto" />
+          <div className="flex flex-col justify-center p-8 md:p-12">
+            <p className="text-sm font-bold uppercase tracking-widest text-primary">{g.eyebrow}</p>
+            <h2 className="mt-4 text-3xl md:text-4xl">{g.title}</h2>
+            <p className="mt-4 text-lg text-muted-foreground">{g.text}</p>
+            <Link to="/get-more-driving-school-students" className={`${btn} mt-8 self-start`}>{g.cta}<Arrow /></Link>
+          </div>
+        </Reveal>
       </section>
 
       <CtaBand />
