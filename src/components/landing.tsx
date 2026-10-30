@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useLang } from "@/lib/lang";
-import { landingPages, type LandingPageData } from "@/lib/landing-pages";
+import { author, facts, landingPages, sources, updated, type LandingPageData } from "@/lib/landing-pages";
 import { Arrow, btn, CtaBand, Reveal } from "@/components/site";
 
 const words = {
@@ -14,6 +14,12 @@ const words = {
     endTitle: "Want this done for your school?",
     endText: "We handle Instagram and Facebook for Texas driving schools, in English and Spanish. Start with a free social media review.",
     cta: "Get your free social media review",
+    by: "By",
+    updated: "Updated",
+    date: "October 30, 2026",
+    data: "What the data says",
+    source: "Source",
+    sources: "Sources",
   },
   es: {
     eyebrow: "Guía · Autoescuelas de Texas",
@@ -25,6 +31,12 @@ const words = {
     endTitle: "¿Quieres que lo hagamos por tu escuela?",
     endText: "Nos encargamos de Instagram y Facebook para autoescuelas de Texas, en inglés y en español. Empieza con una revisión gratis de tus redes.",
     cta: "Pide tu revisión gratis",
+    by: "Por",
+    updated: "Actualizado el",
+    date: "30 de octubre de 2026",
+    data: "Lo que dicen los datos",
+    source: "Fuente",
+    sources: "Fuentes",
   },
 } as const;
 
@@ -36,9 +48,33 @@ export function landingHead(page: LandingPageData) {
       { property: "og:title", content: page.meta.title },
       { property: "og:description", content: page.meta.description },
       { property: "og:type", content: "article" },
+      { name: "author", content: author.name },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   };
+}
+
+function structuredData(page: LandingPageData) {
+  const pageSources = [...new Set(page.facts.map((f) => sources[facts[f].src]))];
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: page.en.h1,
+      description: page.meta.description,
+      inLanguage: ["en", "es"],
+      datePublished: updated,
+      dateModified: updated,
+      author: { "@type": "Person", name: author.name, jobTitle: "Brand & Copy", worksFor: { "@type": "Organization", name: "Tell More Marketing" } },
+      publisher: { "@type": "Organization", name: "Tell More Marketing" },
+      citation: pageSources.map((x) => ({ "@type": "CreativeWork", name: x.name, publisher: x.by, url: x.url })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: page.en.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    },
+  ];
 }
 
 export function LandingPage({ page }: { page: LandingPageData }) {
@@ -46,15 +82,39 @@ export function LandingPage({ page }: { page: LandingPageData }) {
   const w = words[lang];
   const c = page[lang];
   const others = landingPages.filter((p) => p.path !== page.path);
+  const pageSources = [...new Set(page.facts.map((f) => facts[f].src))];
   return (
     <article>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData(page)) }} />
       <header className="px-5 pb-12 pt-16 md:pt-24">
         <Reveal className="mx-auto max-w-4xl">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">{w.eyebrow}</p>
           <h1 className="mt-5 text-4xl leading-tight md:text-6xl">{c.h1}</h1>
+          <div className="mt-8 flex items-center gap-4">
+            <img src={author.photo} alt={author.name} width={56} height={56} className="h-14 w-14 rounded-full object-cover" />
+            <p className="text-sm leading-relaxed">
+              {w.by} <Link to="/team" className="font-bold hover:text-primary">{author.name}</Link>, {author.role[lang]}
+              <br /><span className="text-muted-foreground">{w.updated} <time dateTime={updated}>{w.date}</time></span>
+            </p>
+          </div>
           <div className="mt-10 rounded-2xl border-l-4 border-primary bg-soft p-6 md:p-8">
             <p className="text-sm font-bold uppercase tracking-wider text-primary">{w.answer}</p>
             <p className="mt-3 text-lg leading-relaxed md:text-xl">{c.answer}</p>
+          </div>
+          <div className="mt-6 rounded-2xl border border-border p-6 md:p-8">
+            <p className="text-sm font-bold uppercase tracking-wider text-primary">{w.data}</p>
+            <ul className="mt-3 space-y-4">
+              {page.facts.map((k) => {
+                const f = facts[k];
+                const src = sources[f.src];
+                return (
+                  <li key={k} className="leading-relaxed">
+                    {f[lang]}{" "}
+                    <a href={src.url} target="_blank" rel="noreferrer" className="whitespace-nowrap text-sm font-semibold text-primary underline underline-offset-2">{w.source}: {src.by}</a>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </Reveal>
       </header>
@@ -106,6 +166,15 @@ export function LandingPage({ page }: { page: LandingPageData }) {
             <p className="mt-4 max-w-2xl text-lg">{w.endText}</p>
             <Link to="/contact" className={`${btn} mt-8`}>{w.cta}<Arrow /></Link>
           </div>
+
+          <h2 className="mt-16 text-2xl md:text-3xl">{w.sources}</h2>
+          <ol className="mt-6 list-decimal space-y-2 pl-6 text-muted-foreground">
+            {pageSources.map((k) => (
+              <li key={k}>
+                <a href={sources[k].url} target="_blank" rel="noreferrer" className="font-semibold text-foreground underline underline-offset-2 hover:text-primary">{sources[k].name}</a>, {sources[k].by}
+              </li>
+            ))}
+          </ol>
 
           <h2 className="mt-16 text-2xl md:text-3xl">{w.related}</h2>
           <ul className="mt-6 border-t border-border">
