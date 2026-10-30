@@ -28,6 +28,7 @@ const words = {
       ["Free social media review request", "The owner contacts us for specific recommendations."],
       ["Discovery call", "We qualify the opportunity, discuss goals, and explore working together."],
     ],
+    stages: ["Top of funnel · Awareness", "Top of funnel · Awareness", "Middle of funnel · Consideration (MQL)", "Bottom of funnel · Decision (SQL)"],
     goalsTitle: "Our realistic conversion objectives",
     goalsNote: "Illustrative goals for a new campaign, not measured results or guarantees. Actual conversion rates must be tracked.",
     goals: [["1–3%", "Article visits → review requests"], ["20–30%", "Review requests → qualified leads"], ["50%", "Qualified leads → discovery calls (initial target)"]],
@@ -37,8 +38,9 @@ const words = {
       ["Build trust through social media", "Share instructor introductions, student success stories with permission, and short answers to common parent questions."],
       ["Turn attention into action", "Use one clear call to action, answer inquiries promptly, and measure which posts, pages and ads lead to bookings."],
     ],
-    searchTitle: "Five keywords to research",
-    searchNote: "These are seed keyword ideas. Search volume and ranking difficulty have not yet been verified.",
+    searchTitle: "Five keywords our prospects search for",
+    searchNote: "We checked each keyword with Ubersuggest and Google's own search suggestions (US results). Search volumes are small, which is normal for a niche B2B market, but competition is low: an article like this one can realistically rank.",
+    photoCredit: "Photos: Unsplash",
     endTitle: "Ready to fill more lesson slots?",
     endText: "We help independent Texas driving schools build a social presence that attracts the right audience. Start with a free social media review.",
   },
@@ -57,6 +59,7 @@ const words = {
       ["Solicitud de revisión", "El dueño nos contacta para recibir recomendaciones específicas."],
       ["Llamada inicial", "Evaluamos sus objetivos y una posible colaboración."],
     ],
+    stages: ["Parte alta del embudo · Descubrimiento", "Parte alta del embudo · Descubrimiento", "Parte media · Consideración (MQL)", "Parte baja · Decisión (SQL)"],
     goalsTitle: "Objetivos realistas de conversión",
     goalsNote: "Objetivos orientativos, no resultados medidos ni garantías. Debemos evaluar las tasas reales.",
     goals: [["1–3%", "Visitas al artículo → solicitudes"], ["20–30%", "Solicitudes → prospectos cualificados"], ["50%", "Prospectos cualificados → llamadas (meta inicial)"]],
@@ -66,20 +69,21 @@ const words = {
       ["Genera confianza en redes", "Presenta a tus instructores, comparte logros con permiso y responde preguntas frecuentes de padres."],
       ["Convierte interés en acción", "Usa una llamada a la acción clara, responde rápido y mide qué contenido genera reservas."],
     ],
-    searchTitle: "Cinco palabras clave para investigar",
-    searchNote: "Son ideas iniciales. No hemos verificado el volumen de búsqueda ni la dificultad de posicionamiento.",
+    searchTitle: "Cinco palabras clave que buscan nuestros clientes",
+    searchNote: "Verificamos cada palabra clave con Ubersuggest y las sugerencias de búsqueda de Google (resultados de EE. UU., en inglés porque nuestros clientes buscan en inglés). El volumen es bajo, algo normal en un nicho B2B, pero la competencia también: un artículo como este puede posicionarse.",
+    photoCredit: "Fotos: Unsplash",
     endTitle: "¿Quieres llenar más horarios?",
     endText: "Ayudamos a autoescuelas independientes de Texas a atraer a su público ideal. Empieza con una revisión gratis.",
   },
 } as const;
 
 const keywords = [
-  "driving school marketing agency",
-  "how to get more driving school students",
-  "social media marketing for driving schools",
-  "driving school advertising Texas",
-  "lead generation for driving schools",
-];
+  ["driving school marketing", "Ubersuggest: SEO difficulty 12/100 (low)"],
+  ["driving school marketing agency", "Google suggestion"],
+  ["driving school marketing ideas", "Google suggestion"],
+  ["how to promote driving school business", "Google suggestion"],
+  ["driving school advertising ideas", "Google suggestion"],
+] as const;
 const stepIcons = [Search, BookOpen, ClipboardCheck, Phone];
 
 function Guide() {
@@ -94,12 +98,20 @@ function Guide() {
           <p className="mt-7 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">{t.lead}</p>
           <Link to="/contact" className={`${btn} mt-9`}>{t.action}<Arrow /></Link>
         </Reveal>
+        <Reveal className="mx-auto mt-14 max-w-7xl">
+          <img src="/guide/driving-lesson.jpg" alt="A smiling driving instructor and student during a lesson" width={1600} height={900}
+            className="aspect-[16/9] w-full rounded-3xl object-cover shadow-card md:aspect-[21/9]" fetchPriority="high" />
+        </Reveal>
       </header>
 
       <section className="bg-soft px-5 py-16">
-        <Reveal className="mx-auto max-w-7xl">
-          <h2 className="max-w-3xl text-3xl md:text-4xl">{t.introTitle}</h2>
-          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">{t.intro}</p>
+        <Reveal className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[1fr_minmax(0,22rem)]">
+          <div>
+            <h2 className="max-w-3xl text-3xl md:text-4xl">{t.introTitle}</h2>
+            <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">{t.intro}</p>
+          </div>
+          <img src="/guide/social-media-phone.jpg" alt="A phone showing Instagram, TikTok, YouTube and other social media apps" width={900} height={1125}
+            loading="lazy" className="aspect-[4/5] w-full rounded-3xl object-cover shadow-card" />
         </Reveal>
       </section>
 
@@ -112,6 +124,7 @@ function Guide() {
               const Icon = stepIcons[i]!;
               return <li key={title} className="rounded-2xl border border-border bg-card p-7 shadow-card">
                 <span className="text-xs font-bold text-primary">0{i + 1}</span>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">{t.stages[i]}</p>
                 <Icon className="mt-5 h-8 w-8 text-primary" aria-hidden="true" />
                 <h3 className="mt-5 font-display text-xl font-bold">{title}</h3>
                 <p className="mt-3 text-muted-foreground">{description}</p>
@@ -135,7 +148,9 @@ function Guide() {
       <section className="bg-soft px-5 py-20">
         <div className="mx-auto max-w-7xl">
           <h2 className="max-w-4xl text-3xl md:text-5xl">{t.tipsTitle}</h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <img src="/guide/driving-test.jpg" alt="A driving instructor with a clipboard explaining a driving test to a student" width={1400} height={932}
+            loading="lazy" className="mt-10 aspect-[16/9] w-full rounded-3xl object-cover object-top shadow-card md:aspect-[3/1]" />
+          <div className="mt-5 grid gap-5 md:grid-cols-3">
             {t.tips.map(([title, detail], i) => <div key={title} className="rounded-2xl bg-card p-8 shadow-card">
               <span className="text-sm font-bold text-primary">0{i + 1}</span>
               <h3 className="mt-4 font-display text-2xl font-bold">{title}</h3>
@@ -149,8 +164,12 @@ function Guide() {
         <div className="mx-auto max-w-7xl">
           <h2 className="text-3xl md:text-5xl">{t.searchTitle}</h2>
           <p className="mt-4 max-w-3xl text-muted-foreground">{t.searchNote}</p>
-          <ul className="mt-8 flex flex-wrap gap-3">{keywords.map(k =>
-            <li key={k} className="rounded-full border border-border bg-soft px-5 py-3 font-semibold">{k}</li>)}</ul>
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{keywords.map(([k, source]) =>
+            <li key={k} className="rounded-2xl border border-border bg-soft px-5 py-4">
+              <p className="font-semibold">{k}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{source}</p>
+            </li>)}</ul>
+          <p className="mt-10 text-xs text-muted-foreground">{t.photoCredit}</p>
         </div>
       </section>
       <section className="px-5 pb-20">

@@ -102,6 +102,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <ul className="space-y-2">
               <li><Link to="/" className="hover:text-pop">{t.extra.home}</Link></li>
               {navLinks.map((l) => <li key={l.to}><Link to={l.to} className="hover:text-pop">{t.nav[l.k]}</Link></li>)}
+              <li><Link to="/get-more-driving-school-students" className="hover:text-pop">{lang === "es" ? "Guía gratis" : "Free guide"}</Link></li>
             </ul>
             <ul className="space-y-2">
               <li><a href="mailto:tellmoremarketing@gmail.com" className="flex items-center gap-2 hover:text-pop"><Mail className="h-4 w-4" aria-hidden />tellmoremarketing@gmail.com</a></li>
