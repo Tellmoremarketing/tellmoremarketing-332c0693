@@ -74,8 +74,8 @@ function FreeResources() {
                   {i === 0 && <Link to="/contact" className="group font-bold underline decoration-pop decoration-2 underline-offset-4">{o.cta}<Arrow /></Link>}
                   {i === 1 && <Link to="/get-more-driving-school-students" className="group font-bold text-primary underline decoration-pop decoration-2 underline-offset-4">{o.cta}<Arrow /></Link>}
                   {i === 2 && (
-                    <div className="flex flex-col gap-2 font-bold">
-                      <a href="mailto:tellmoremarketing@gmail.com" className="flex items-center gap-2 text-primary hover:underline"><Mail className="h-4 w-4" aria-hidden />tellmoremarketing@gmail.com</a>
+                    <div className="flex flex-col gap-2 text-sm font-bold">
+                      <a href="mailto:tellmoremarketing@gmail.com" className="flex min-w-0 items-center gap-2 break-all text-primary hover:underline"><Mail className="h-4 w-4 shrink-0" aria-hidden />tellmoremarketing@gmail.com</a>
                       <a href="https://instagram.com/tellmoremarketing" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-primary hover:underline"><Instagram className="h-4 w-4" aria-hidden />@tellmoremarketing</a>
                     </div>
                   )}
