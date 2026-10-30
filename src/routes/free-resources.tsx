@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ClipboardCheck, BookOpen, MessageCircle, Mail, Instagram, Magnet, Handshake, Heart, RefreshCw } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { Arrow, btn, CtaBand, PageHero, Reveal } from "@/components/site";
+import { landingPages } from "@/lib/landing-pages";
 
 export const Route = createFileRoute("/free-resources")({
   head: () => ({
@@ -24,7 +25,7 @@ const words = {
     sub: "Our approach is simple: be useful first. Everything on this page is free, with no contract and no strings attached.",
     offers: [
       { t: "Free social media review", d: "We look at your Instagram, Facebook and website, then send you clear next steps you can act on yourself.", cta: "Get your review" },
-      { t: "Free marketing guides", d: "Practical guides on getting more students: showing up in local searches, building trust on social media and turning inquiries into booked lessons.", cta: "Read the guide" },
+      { t: "Free marketing guides", d: "Practical guides on getting more students: showing up in local searches, building trust on social media and turning inquiries into booked lessons.", cta: "See all guides" },
       { t: "Free answers to your questions", d: "Not sure if a post, an ad or your Google profile is working? Email us or send us a DM and we'll give you an honest answer.", cta: "Ask us" },
     ],
     funnelEyebrow: "Our inbound funnel",
@@ -38,6 +39,8 @@ const words = {
     toolsLabel: "What we use",
     kpiLabel: "What we measure",
     loop: "The funnel is a loop: every happy client's review and recommendation attracts the next driving school owner.",
+    guidesTitle: "Our free guides",
+    mainGuide: "How to get more students for your Texas driving school",
     whyTitle: "Why we give this away",
     why: [
       { t: "Help first, sell later", d: "Driving school owners trust people who have already helped them. We'd rather prove we're useful than tell you we are." },
@@ -51,7 +54,7 @@ const words = {
     sub: "Nuestra forma de trabajar es simple: primero ser útiles. Todo en esta página es gratis, sin contrato y sin compromiso.",
     offers: [
       { t: "Revisión gratis de redes sociales", d: "Revisamos tu Instagram, Facebook y sitio web, y te enviamos pasos claros que puedes aplicar tú mismo.", cta: "Pide tu revisión" },
-      { t: "Guías de marketing gratis", d: "Guías prácticas para conseguir más alumnos: aparecer en búsquedas locales, generar confianza en redes y convertir consultas en clases reservadas.", cta: "Leer la guía" },
+      { t: "Guías de marketing gratis", d: "Guías prácticas para conseguir más alumnos: aparecer en búsquedas locales, generar confianza en redes y convertir consultas en clases reservadas.", cta: "Ver todas las guías" },
       { t: "Respuestas gratis a tus preguntas", d: "¿No sabes si una publicación, un anuncio o tu perfil de Google funciona? Escríbenos por email o mensaje directo y te daremos una respuesta honesta.", cta: "Pregúntanos" },
     ],
     funnelEyebrow: "Nuestro embudo inbound",
@@ -65,6 +68,8 @@ const words = {
     toolsLabel: "Qué usamos",
     kpiLabel: "Qué medimos",
     loop: "El embudo es un ciclo: la reseña y la recomendación de cada cliente contento atrae al siguiente dueño de autoescuela.",
+    guidesTitle: "Nuestras guías gratis",
+    mainGuide: "Cómo conseguir más alumnos para tu autoescuela en Texas",
     whyTitle: "Por qué lo ofrecemos gratis",
     why: [
       { t: "Primero ayudar, después vender", d: "Los dueños de autoescuelas confían en quien ya les ha ayudado. Preferimos demostrar que somos útiles a decirlo." },
@@ -95,7 +100,7 @@ function FreeResources() {
                 <p className="mt-3 flex-1 text-lg opacity-80">{o.d}</p>
                 <div className="mt-8">
                   {i === 0 && <Link to="/contact" className="group font-bold underline decoration-pop decoration-2 underline-offset-4">{o.cta}<Arrow /></Link>}
-                  {i === 1 && <Link to="/get-more-driving-school-students" className="group font-bold text-primary underline decoration-pop decoration-2 underline-offset-4">{o.cta}<Arrow /></Link>}
+                  {i === 1 && <a href="#guides" className="group font-bold text-primary underline decoration-pop decoration-2 underline-offset-4">{o.cta}<Arrow /></a>}
                   {i === 2 && (
                     <div className="flex flex-col gap-2 text-sm font-bold">
                       <a href="mailto:tellmoremarketing@gmail.com" className="flex min-w-0 items-center gap-2 break-all text-primary hover:underline"><Mail className="h-4 w-4 shrink-0" aria-hidden />tellmoremarketing@gmail.com</a>
@@ -107,6 +112,19 @@ function FreeResources() {
             );
           })}
         </ul>
+      </section>
+
+      <section id="guides" className="px-5 pb-20">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="max-w-3xl text-3xl md:text-5xl">{t.guidesTitle}</h2>
+          <ul className="mt-8 border-t border-border">
+            {[{ path: "/get-more-driving-school-students", title: t.mainGuide }, ...landingPages.map((p) => ({ path: p.path, title: p[lang].h1 }))].map((g) => (
+              <li key={g.path} className="border-b border-border">
+                <Link to={g.path} className="group flex items-center justify-between gap-4 py-5 font-display text-xl font-bold transition-colors hover:text-primary md:text-2xl">{g.title}<Arrow /></Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <section className="bg-soft px-5 py-20">
