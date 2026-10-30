@@ -3,9 +3,30 @@
 
 type Section = { h: string; p?: string; list?: readonly string[] };
 type Content = { h1: string; answer: string; sections: readonly Section[]; faq: readonly { q: string; a: string }[] };
+export const author = { name: "Niko Hrenar", photo: "/team/nico.jpg", role: { en: "Brand & Copy, Tell More Marketing", es: "Marca y textos, Tell More Marketing" } };
+export const updated = "2026-10-30";
+
+export const sources = {
+  google: { name: "Tips to improve your local ranking on Google", by: "Google Business Profile Help", url: "https://support.google.com/business/answer/7091?hl=en" },
+  pew: { name: "Americans’ Social Media Use 2025", by: "Pew Research Center", url: "https://www.pewresearch.org/internet/2025/11/20/americans-social-media-use-2025/" },
+  brightlocal: { name: "Local Consumer Review Survey 2025", by: "BrightLocal", url: "https://www.brightlocal.com/research/local-consumer-review-survey-2025/" },
+  meta: { name: "How to choose locations for your ad", by: "Meta Business Help Centre", url: "https://www.facebook.com/business/help/365561350785642" },
+} as const;
+
+// Facts quoted on the pages, each checked against its source.
+export const facts = {
+  googleComplete: { src: "google", en: "Google says businesses with complete and accurate information are more likely to show up in local search results, and that more reviews and positive ratings can help a business’s local ranking.", es: "Google afirma que los negocios con información completa y precisa tienen más probabilidades de aparecer en los resultados locales, y que más reseñas y buenas calificaciones pueden mejorar su posición." },
+  googleFactors: { src: "google", en: "Google ranks local results mainly on relevance (how well your profile matches the search), distance and prominence, which includes how many reviews you have.", es: "Google ordena los resultados locales principalmente por relevancia (qué tan bien coincide tu perfil con la búsqueda), distancia y prominencia, que incluye cuántas reseñas tienes." },
+  pew: { src: "pew", en: "71% of U.S. adults use Facebook and 50% use Instagram, according to a 2025 Pew Research Center survey of 5,022 adults.", es: "El 71% de los adultos en EE. UU. usa Facebook y el 50% usa Instagram, según una encuesta de Pew Research Center a 5,022 adultos en 2025." },
+  reviews: { src: "brightlocal", en: "Only 4% of consumers say they never read online reviews of local businesses, and Google is the platform they use most to find them.", es: "Solo el 4% de los consumidores dice que nunca lee reseñas en internet de negocios locales, y Google es la plataforma que más usan para encontrarlas." },
+  metaRadius: { src: "meta", en: "Meta Ads Manager lets you choose the locations your ad reaches, including a radius around a place, such as your school.", es: "Meta Ads Manager te permite elegir dónde se muestra tu anuncio, incluido un radio alrededor de un lugar, como tu escuela." },
+} as const;
+export type FactKey = keyof typeof facts;
+
 export type LandingPageData = {
   path: string;
   keyword: string;
+  facts: readonly FactKey[];
   meta: { title: string; description: string };
   en: Content;
   es: Content;
@@ -14,6 +35,7 @@ export type LandingPageData = {
 export const landingPages = [
   {
     path: "/driving-school-marketing",
+    facts: ["googleComplete", "pew"],
     keyword: "driving school marketing",
     meta: {
       title: "Driving School Marketing: How It Works | Tell More",
@@ -58,6 +80,7 @@ export const landingPages = [
   },
   {
     path: "/driving-school-marketing-agency",
+    facts: ["pew", "reviews"],
     keyword: "driving school marketing agency",
     meta: {
       title: "Driving School Marketing Agency: Is It Worth It? | Tell More",
@@ -116,6 +139,7 @@ export const landingPages = [
   },
   {
     path: "/driving-school-marketing-ideas",
+    facts: ["reviews", "googleComplete"],
     keyword: "driving school marketing ideas",
     meta: {
       title: "8 Driving School Marketing Ideas for Texas | Tell More",
@@ -168,6 +192,7 @@ export const landingPages = [
   },
   {
     path: "/how-to-promote-a-driving-school",
+    facts: ["googleFactors", "reviews"],
     keyword: "how to promote driving school business",
     meta: {
       title: "How to Promote a Driving School Business | Tell More",
@@ -206,6 +231,7 @@ export const landingPages = [
   },
   {
     path: "/driving-school-advertising-ideas",
+    facts: ["metaRadius", "pew"],
     keyword: "driving school advertising ideas",
     meta: {
       title: "Driving School Advertising Ideas That Work | Tell More",
