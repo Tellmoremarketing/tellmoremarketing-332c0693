@@ -34,7 +34,7 @@ function Services() {
               <Reveal key={s.t} className={`group rounded-2xl p-8 shadow-card md:p-10 ${span} ${tone}`}>
                 <div className="flex items-start justify-between">
                   <I className="h-10 w-10" strokeWidth={1.6} aria-hidden />
-                  <span className="font-display text-sm font-bold opacity-60">0{i + 1}</span>
+                  <span className="font-display text-sm font-bold opacity-60">{String(i + 1).padStart(2, "0")}</span>
                 </div>
                 <h2 className="mt-8 text-2xl leading-tight">{s.t}</h2>
                 <p className="mt-3 text-lg opacity-80">{s.d}</p>
