@@ -8,7 +8,7 @@ export const Route = createFileRoute("/free-resources")({
   head: () => ({
     meta: [
       { title: "Free resources for Texas driving schools — Tell More Marketing" },
-      { name: "description", content: "A free social media review, free marketing guides and free answers to your questions. Practical help for Texas driving schools, no strings attached." },
+      { name: "description", content: "A free marketing review, free marketing guides and free answers to your questions. Practical help for Texas driving schools, no strings attached." },
       { property: "og:title", content: "Free resources for Texas driving schools — Tell More Marketing" },
       { property: "og:description", content: "Practical, free marketing help for Texas driving schools." },
       { property: "og:type", content: "website" },
@@ -24,7 +24,7 @@ const words = {
     title: "Free help for Texas driving schools",
     sub: "Our approach is simple: be useful first. Everything on this page is free, with no contract and no strings attached.",
     offers: [
-      { t: "Free social media review", d: "We look at your Instagram, Facebook and website, then send you clear next steps you can act on yourself.", cta: "Get your review" },
+      { t: "Free marketing review", d: "We look at your website, Google profile, ads, Instagram and Facebook, then send you clear next steps you can act on yourself.", cta: "Get your review" },
       { t: "Free marketing guides", d: "Practical guides on getting more students: showing up in local searches, building trust on social media and turning inquiries into booked lessons.", cta: "See all guides" },
       { t: "Free answers to your questions", d: "Not sure if a post, an ad or your Google profile is working? Email us or send us a DM and we'll give you an honest answer.", cta: "Ask us" },
     ],
@@ -33,8 +33,8 @@ const words = {
     funnelSub: "How our free resources turn into happy clients, and how happy clients bring in the next ones.",
     funnel: [
       { t: "Attract", who: "Strangers → visitors", d: "A Texas driving school owner searches Google or ChatGPT for ways to get more students and finds our free guide, landing pages or Instagram posts.", tools: ["Free marketing guides", "SEO landing pages", "Instagram @tellmoremarketing"], kpi: "Visits to our guides and pages" },
-      { t: "Engage", who: "Visitors → leads → clients", d: "The owner asks for a free social media review. We send clear next steps, then talk on a discovery call about running their Instagram and Facebook.", tools: ["Free social media review", "Free answers by email or DM", "Discovery call"], kpi: "Review requests and calls booked" },
-      { t: "Delight", who: "Clients → promoters", d: "We post every week, run ads and send a simple monthly report. Clients who see more bookings stay with us, leave a review and tell other owners.", tools: ["Monthly results report", "Quick, honest answers", "New guides as they come out"], kpi: "Clients who stay, reviews and referrals" },
+      { t: "Engage", who: "Visitors → leads → clients", d: "The owner asks for a free marketing review. We send clear next steps, then talk on a discovery call about the services they need: website, SEO, ads, booking or social media.", tools: ["Free marketing review", "Free answers by email or DM", "Discovery call"], kpi: "Review requests and calls booked" },
+      { t: "Delight", who: "Clients → promoters", d: "We run their website, ads and social media and send a simple monthly report. Clients who see more bookings stay with us, leave a review and tell other owners.", tools: ["Monthly results report", "Quick, honest answers", "New guides as they come out"], kpi: "Clients who stay, reviews and referrals" },
     ],
     toolsLabel: "What we use",
     kpiLabel: "What we measure",
@@ -45,7 +45,7 @@ const words = {
     why: [
       { t: "Help first, sell later", d: "Driving school owners trust people who have already helped them. We'd rather prove we're useful than tell you we are." },
       { t: "Easy to find", d: "Helpful guides and answers are how owners find us on Google and ChatGPT when they search for ways to get more students." },
-      { t: "No pressure", d: "If you ever want help running your social media, you'll already know how we work. If not, keep using the free resources." },
+      { t: "No pressure", d: "If you ever want help with your marketing, you'll already know how we work. If not, keep using the free resources." },
     ],
   },
   es: {
@@ -53,7 +53,7 @@ const words = {
     title: "Ayuda gratis para autoescuelas de Texas",
     sub: "Nuestra forma de trabajar es simple: primero ser útiles. Todo en esta página es gratis, sin contrato y sin compromiso.",
     offers: [
-      { t: "Revisión gratis de redes sociales", d: "Revisamos tu Instagram, Facebook y sitio web, y te enviamos pasos claros que puedes aplicar tú mismo.", cta: "Pide tu revisión" },
+      { t: "Revisión de marketing gratis", d: "Revisamos tu sitio web, tu perfil de Google, tus anuncios, Instagram y Facebook, y te enviamos pasos claros que puedes aplicar tú mismo.", cta: "Pide tu revisión" },
       { t: "Guías de marketing gratis", d: "Guías prácticas para conseguir más alumnos: aparecer en búsquedas locales, generar confianza en redes y convertir consultas en clases reservadas.", cta: "Ver todas las guías" },
       { t: "Respuestas gratis a tus preguntas", d: "¿No sabes si una publicación, un anuncio o tu perfil de Google funciona? Escríbenos por email o mensaje directo y te daremos una respuesta honesta.", cta: "Pregúntanos" },
     ],
@@ -62,8 +62,8 @@ const words = {
     funnelSub: "Cómo nuestros recursos gratis se convierten en clientes contentos, y cómo esos clientes atraen a los siguientes.",
     funnel: [
       { t: "Atraer", who: "Desconocidos → visitantes", d: "El dueño de una autoescuela en Texas busca en Google o ChatGPT cómo conseguir más alumnos y encuentra nuestra guía gratis, nuestras páginas o nuestros posts en Instagram.", tools: ["Guías de marketing gratis", "Páginas SEO por palabra clave", "Instagram @tellmoremarketing"], kpi: "Visitas a nuestras guías y páginas" },
-      { t: "Interactuar", who: "Visitantes → prospectos → clientes", d: "El dueño pide una revisión gratis de sus redes. Le enviamos pasos claros y luego hablamos en una llamada sobre manejar su Instagram y Facebook.", tools: ["Revisión gratis de redes", "Respuestas gratis por email o DM", "Llamada inicial"], kpi: "Solicitudes de revisión y llamadas" },
-      { t: "Encantar", who: "Clientes → promotores", d: "Publicamos cada semana, corremos anuncios y enviamos un reporte mensual sencillo. Los clientes que ven más reservas se quedan, dejan una reseña y nos recomiendan.", tools: ["Reporte mensual de resultados", "Respuestas rápidas y honestas", "Nuevas guías"], kpi: "Clientes que se quedan, reseñas y recomendaciones" },
+      { t: "Interactuar", who: "Visitantes → prospectos → clientes", d: "El dueño pide una revisión de marketing gratis. Le enviamos pasos claros y luego hablamos en una llamada sobre los servicios que necesita: sitio web, SEO, anuncios, reservas o redes.", tools: ["Revisión de marketing gratis", "Respuestas gratis por email o DM", "Llamada inicial"], kpi: "Solicitudes de revisión y llamadas" },
+      { t: "Encantar", who: "Clientes → promotores", d: "Manejamos su sitio, sus anuncios y sus redes y enviamos un reporte mensual sencillo. Los clientes que ven más reservas se quedan, dejan una reseña y nos recomiendan.", tools: ["Reporte mensual de resultados", "Respuestas rápidas y honestas", "Nuevas guías"], kpi: "Clientes que se quedan, reseñas y recomendaciones" },
     ],
     toolsLabel: "Qué usamos",
     kpiLabel: "Qué medimos",
@@ -74,7 +74,7 @@ const words = {
     why: [
       { t: "Primero ayudar, después vender", d: "Los dueños de autoescuelas confían en quien ya les ha ayudado. Preferimos demostrar que somos útiles a decirlo." },
       { t: "Fáciles de encontrar", d: "Las guías y respuestas útiles son la forma en que los dueños nos encuentran en Google y ChatGPT cuando buscan más alumnos." },
-      { t: "Sin presión", d: "Si algún día quieres ayuda con tus redes sociales, ya sabrás cómo trabajamos. Si no, sigue usando los recursos gratis." },
+      { t: "Sin presión", d: "Si algún día quieres ayuda con tu marketing, ya sabrás cómo trabajamos. Si no, sigue usando los recursos gratis." },
     ],
   },
 } as const;
