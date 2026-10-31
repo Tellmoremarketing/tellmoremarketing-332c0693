@@ -6,9 +6,9 @@ export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
       { title: "How it works — Tell More Marketing" },
-      { name: "description", content: "Free audit, a content plan built for your school, then more bookings with monthly results. Three steps, no headaches." },
+      { name: "description", content: "Free marketing review, a plan built for your school, then more bookings with monthly results. Three steps, no headaches." },
       { property: "og:title", content: "How it works — Tell More Marketing" },
-      { property: "og:description", content: "Three steps from a free social media audit to a fuller driving school schedule." },
+      { property: "og:description", content: "Three steps from a free marketing review to a fuller driving school schedule." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

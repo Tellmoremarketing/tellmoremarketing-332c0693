@@ -6,10 +6,10 @@ import { Arrow, btn, CtaBand, Reveal, navLinks } from "@/components/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Tell More Marketing — Social media for Texas driving schools" },
-      { name: "description", content: "Social media marketing for driving schools in Texas. Attract potential students through Instagram and Facebook content and advertising. Get your free social media review." },
-      { property: "og:title", content: "Tell More Marketing — Social media for Texas driving schools" },
-      { property: "og:description", content: "Social media marketing for driving schools in Texas. Spend more time teaching. Let us handle your social media." },
+      { title: "Tell More Marketing — Marketing for Texas driving schools" },
+      { name: "description", content: "Marketing for driving schools in Texas: websites, SEO, Google Ads, Facebook & Instagram ads, online booking and social media. Get your free marketing review." },
+      { property: "og:title", content: "Tell More Marketing — Marketing for Texas driving schools" },
+      { property: "og:description", content: "Marketing for driving schools in Texas. Spend more time teaching. We bring in the students." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

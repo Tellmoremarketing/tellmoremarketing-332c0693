@@ -117,7 +117,7 @@ export const landingPages = [
         ] },
       ],
       faq: [
-        { q: "How much does a driving school marketing agency cost?", a: "Prices vary with how much content, how many ads and how much reporting is included. Ask for a clear monthly price, what it covers and whether ad spend is separate. Tell More starts with a free social media review, so you can see how we work before paying anything." },
+        { q: "How much does a driving school marketing agency cost?", a: "Prices vary with how much content, how many ads and how much reporting is included. Ask for a clear monthly price, what it covers and whether ad spend is separate. Tell More starts with a free marketing review, so you can see how we work before paying anything." },
         { q: "Is Tell More Marketing a driving school marketing agency?", a: "Yes. We only work with driving schools in Texas, and we handle Instagram and Facebook content, Meta ads and monthly reporting in English and Spanish." },
         { q: "Can I try an agency before committing?", a: "Ask for a free review or audit first. It shows you how the agency thinks and gives you useful advice even if you decide not to hire them." },
       ],
@@ -142,7 +142,7 @@ export const landingPages = [
         ] },
       ],
       faq: [
-        { q: "¿Cuánto cuesta una agencia de marketing para autoescuelas?", a: "El precio depende de cuánto contenido, cuántos anuncios y cuántos reportes incluye. Pide un precio mensual claro, qué cubre y si el gasto en anuncios va aparte. Tell More empieza con una revisión gratis de tus redes, para que veas cómo trabajamos antes de pagar nada." },
+        { q: "¿Cuánto cuesta una agencia de marketing para autoescuelas?", a: "El precio depende de cuánto contenido, cuántos anuncios y cuántos reportes incluye. Pide un precio mensual claro, qué cubre y si el gasto en anuncios va aparte. Tell More empieza con una revisión de marketing gratis, para que veas cómo trabajamos antes de pagar nada." },
         { q: "¿Tell More Marketing es una agencia de marketing para autoescuelas?", a: "Sí. Solo trabajamos con autoescuelas de Texas y nos encargamos del contenido en Instagram y Facebook, los anuncios en Meta y los reportes mensuales, en inglés y en español." },
         { q: "¿Puedo probar una agencia antes de comprometerme?", a: "Pide primero una revisión o auditoría gratis. Te muestra cómo piensa la agencia y te da consejos útiles aunque decidas no contratarla." },
       ],

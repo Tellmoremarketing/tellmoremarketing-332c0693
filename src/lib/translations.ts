@@ -3,12 +3,12 @@ export type Lang = "en" | "es";
 
 export const translations = {
   en: {
-    nav: { services: "Services", how: "How it works", team: "Team", contact: "Contact", cta: "Free social media review", menu: "Open menu", close: "Close menu" },
+    nav: { services: "Services", how: "How it works", team: "Team", contact: "Contact", cta: "Free marketing review", menu: "Open menu", close: "Close menu" },
     hero: {
-      title: "Social Media Marketing for Driving Schools in Texas",
-      tagline: "Spend more time teaching. Let us handle your social media.",
-      sub: "We help your driving school attract potential students and turn online interest into lesson enquiries through Instagram and Facebook content and advertising.",
-      cta: "Get your free social media review",
+      title: "Marketing for Driving Schools in Texas",
+      tagline: "Spend more time teaching. We bring in the students.",
+      sub: "We help your driving school attract potential students and turn online interest into lesson enquiries with a website that books, Google search and ads, and Instagram and Facebook content.",
+      cta: "Get your free marketing review",
       secondary: "See how it works",
       points: ["Only driving schools in Texas", "English & Spanish content", "Clear monthly results"],
     },
@@ -37,8 +37,8 @@ export const translations = {
       eyebrow: "How it works",
       title: "Three steps. No headaches.",
       steps: [
-        { t: "Free social media review", d: "We review your social media and website." },
-        { t: "Your plan", d: "A content calendar built around your school." },
+        { t: "Free marketing review", d: "We review your website, Google profile, ads and social media." },
+        { t: "Your plan", d: "A plan for your website, ads and content, built around your school." },
         { t: "More bookings", d: "We post, run ads and report results every month." },
       ],
     },
@@ -50,7 +50,7 @@ export const translations = {
     },
     contact: {
       eyebrow: "Contact",
-      title: "Get your free social media review",
+      title: "Get your free marketing review",
       sub: "Tell us about your school. We'll take a look and send you clear next steps.",
       name: "Your name", school: "Driving school name", city: "City in Texas", email: "Email",
       phone: "Phone (optional)", social: "Instagram or Facebook link (optional)", message: "Message (optional)",
@@ -63,16 +63,16 @@ export const translations = {
       thanks: "Thanks! Your message has been submitted.",
       reach: "Prefer email or DMs?",
     },
-    extra: { home: "Home", footerKicker: "Ready when you are", footerBig: "Let's fill your schedule.", marquee: ["Texas driving schools", "Reels that book", "English + Español", "Lead ads", "Monthly results"], explore: "Explore", servicesSub: "One team for your website, search, ads and social media, from the first post to the monthly report.", howSub: "From a free social media review to a full schedule, here's what working with us looks like.", teamSub: "Six marketing students. One mission: help Texas driving schools grow." },
+    extra: { home: "Home", footerKicker: "Ready when you are", footerBig: "Let's fill your schedule.", marquee: ["Texas driving schools", "Websites that book", "Google Ads", "Reels that book", "English + Español", "Lead ads", "Monthly results"], explore: "Explore", servicesSub: "One team for your website, search, ads and social media, from the first post to the monthly report.", howSub: "From a free marketing review to a full schedule, here's what working with us looks like.", teamSub: "Six marketing students. One mission: help Texas driving schools grow." },
     footer: { privacy: "Privacy policy", terms: "Terms", rights: "© 2026 Tell More Marketing" },
   },
   es: {
     nav: { services: "Servicios", how: "Cómo funciona", team: "Equipo", contact: "Contacto", cta: "Revisión gratis", menu: "Abrir menú", close: "Cerrar menú" },
     hero: {
-      title: "Marketing en redes sociales para autoescuelas en Texas",
-      tagline: "Dedica más tiempo a enseñar. Nosotros nos encargamos de tus redes sociales.",
-      sub: "Ayudamos a tu autoescuela a atraer posibles alumnos y convertir el interés en internet en consultas sobre clases mediante contenido y publicidad en Instagram y Facebook.",
-      cta: "Pide tu revisión de redes gratis",
+      title: "Marketing para autoescuelas en Texas",
+      tagline: "Dedica más tiempo a enseñar. Nosotros traemos a los alumnos.",
+      sub: "Ayudamos a tu autoescuela a atraer posibles alumnos y convertir el interés en internet en consultas sobre clases con un sitio web que recibe reservas, búsquedas y anuncios en Google, y contenido en Instagram y Facebook.",
+      cta: "Pide tu revisión de marketing gratis",
       secondary: "Mira cómo funciona",
       points: ["Solo autoescuelas en Texas", "Contenido en inglés y español", "Resultados claros cada mes"],
     },
@@ -101,8 +101,8 @@ export const translations = {
       eyebrow: "Cómo funciona",
       title: "Tres pasos. Sin complicaciones.",
       steps: [
-        { t: "Revisión gratis", d: "Revisamos tus redes sociales y tu sitio web." },
-        { t: "Tu plan", d: "Un calendario de contenido hecho para tu escuela." },
+        { t: "Revisión gratis", d: "Revisamos tu sitio web, tu perfil de Google, tus anuncios y tus redes." },
+        { t: "Tu plan", d: "Un plan para tu sitio, tus anuncios y tu contenido, hecho para tu escuela." },
         { t: "Más reservas", d: "Publicamos, corremos anuncios y te reportamos resultados cada mes." },
       ],
     },
@@ -114,7 +114,7 @@ export const translations = {
     },
     contact: {
       eyebrow: "Contacto",
-      title: "Pide tu revisión de redes gratis",
+      title: "Pide tu revisión de marketing gratis",
       sub: "Cuéntanos de tu escuela. La revisamos y te mandamos los siguientes pasos.",
       name: "Tu nombre", school: "Nombre de la autoescuela", city: "Ciudad en Texas", email: "Correo",
       phone: "Teléfono (opcional)", social: "Link de Instagram o Facebook (opcional)", message: "Mensaje (opcional)",
@@ -127,7 +127,7 @@ export const translations = {
       thanks: "¡Gracias! Tu mensaje se ha enviado.",
       reach: "¿Prefieres correo o mensaje directo?",
     },
-    extra: { home: "Inicio", footerKicker: "Cuando quieras", footerBig: "Llenemos tu agenda.", marquee: ["Autoescuelas en Texas", "Reels que traen alumnos", "English + Español", "Anuncios", "Resultados mensuales"], explore: "Explorar", servicesSub: "Un equipo para tu sitio web, buscadores, anuncios y redes, desde el primer post hasta el reporte mensual.", howSub: "De una revisión gratis a una agenda llena, así es trabajar con nosotros.", teamSub: "Seis estudiantes de marketing. Una misión: ayudar a las autoescuelas de Texas a crecer." },
+    extra: { home: "Inicio", footerKicker: "Cuando quieras", footerBig: "Llenemos tu agenda.", marquee: ["Autoescuelas en Texas", "Sitios que reciben reservas", "Google Ads", "Reels que traen alumnos", "English + Español", "Anuncios", "Resultados mensuales"], explore: "Explorar", servicesSub: "Un equipo para tu sitio web, buscadores, anuncios y redes, desde el primer post hasta el reporte mensual.", howSub: "De una revisión gratis a una agenda llena, así es trabajar con nosotros.", teamSub: "Seis estudiantes de marketing. Una misión: ayudar a las autoescuelas de Texas a crecer." },
     footer: { privacy: "Política de privacidad", terms: "Términos", rights: "© 2026 Tell More Marketing" },
   },
 } as const;

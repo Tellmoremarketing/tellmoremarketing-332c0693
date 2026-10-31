@@ -13,7 +13,7 @@ const words = {
     resources: "All our free resources",
     endTitle: "Want this done for your school?",
     endText: "We build websites and run SEO, Google Ads and social media for Texas driving schools, in English and Spanish. Start with a free review.",
-    cta: "Get your free social media review",
+    cta: "Get your free marketing review",
     by: "By",
     updated: "Updated",
     date: "October 30, 2026",

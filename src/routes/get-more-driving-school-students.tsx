@@ -17,7 +17,7 @@ const words = {
     eyebrow: "FREE GUIDE · TEXAS DRIVING SCHOOLS",
     title: "How to get more students for your Texas driving school",
     lead: "Empty lesson slots? More random posting isn't the answer. Create a clear path from online discovery to a real conversation—and, ultimately, more booked lessons.",
-    action: "Get your free social media review",
+    action: "Get your free marketing review",
     introTitle: "Your next student starts with a search.",
     intro: "Parents and new drivers research their options online. A clear Google presence, useful social content, and a simple way to get in touch can help your school stand out.",
     funnelTitle: "The conversion funnel",
@@ -25,7 +25,7 @@ const words = {
     steps: [
       ["Google or ChatGPT", "An owner searches for ways to get more driving school students."],
       ["This helpful article", "Our guide answers their question and introduces a practical approach."],
-      ["Free social media review request", "The owner contacts us for specific recommendations."],
+      ["Free marketing review request", "The owner contacts us for specific recommendations."],
       ["Discovery call", "We qualify the opportunity, discuss goals, and explore working together."],
     ],
     stages: ["Top of funnel · Awareness", "Top of funnel · Awareness", "Middle of funnel · Consideration (MQL)", "Bottom of funnel · Decision (SQL)"],
@@ -42,7 +42,7 @@ const words = {
     searchNote: "We checked each keyword with Ubersuggest and Google's own search suggestions (US results). Search volumes are small, which is normal for a niche B2B market, but competition is low: an article like this one can realistically rank.",
     photoCredit: "Photos: Unsplash",
     endTitle: "Ready to fill more lesson slots?",
-    endText: "We help independent Texas driving schools build a social presence that attracts the right audience. Start with a free social media review.",
+    endText: "We help independent Texas driving schools with websites, SEO, ads and social media that attract the right audience. Start with a free marketing review.",
   },
   es: {
     eyebrow: "GUÍA GRATIS · AUTOESCUELAS DE TEXAS",

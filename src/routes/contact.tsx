@@ -6,10 +6,10 @@ import { ContactForm, PageHero, Reveal } from "@/components/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Free social media review — Tell More Marketing" },
-      { name: "description", content: "Tell us about your Texas driving school and get a free social media review within 48 hours." },
-      { property: "og:title", content: "Free social media review — Tell More Marketing" },
-      { property: "og:description", content: "Get clear next steps for your driving school's social media, free." },
+      { title: "Free marketing review — Tell More Marketing" },
+      { name: "description", content: "Tell us about your Texas driving school and get a free marketing review within 48 hours." },
+      { property: "og:title", content: "Free marketing review — Tell More Marketing" },
+      { property: "og:description", content: "Get clear next steps for your driving school's website, ads and social media, free." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
