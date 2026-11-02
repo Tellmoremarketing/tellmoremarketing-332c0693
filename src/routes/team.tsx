@@ -21,6 +21,7 @@ const portraits: Record<string, string> = {
   "Arya Balak": "/team/arya.jpg",
   "Zack Morissette": "/team/zack.jpg",
   "Lilou Petit": "/team/lilou.jpg",
+  "Igne Spulyte": "/team/igne.jpg",
   "Niko Hrenar": "/team/nico.jpg",
   "Clémence Auboiroux": "/team/clemence.jpg",
 };
