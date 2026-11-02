@@ -18,7 +18,7 @@ export const translations = {
     },
     services: {
       eyebrow: "Services",
-      title: "Everything your school needs to bring in students",
+      title: "Everything your driving school needs to bring in students",
       more: "Read the guide",
       items: [
         { t: "Social media management", d: "We plan and post on Instagram & Facebook every week, so your page never goes quiet.", to: undefined },
@@ -82,7 +82,7 @@ export const translations = {
     },
     services: {
       eyebrow: "Servicios",
-      title: "Todo lo que tu escuela necesita para atraer alumnos",
+      title: "Todo lo que tu autoescuela necesita para atraer alumnos",
       more: "Leer la guía",
       items: [
         { t: "Manejo de redes sociales", d: "Planeamos y publicamos en Instagram y Facebook cada semana, para que tu página nunca se quede callada.", to: undefined },
